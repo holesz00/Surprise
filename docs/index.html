@@ -102,8 +102,6 @@ function createFlower(){
   document.body.appendChild(flower);
   setTimeout(()=>{flower.remove()}, 10000);
 }
-// folyamatos hullás
-setInterval(createFlower, 200); // minden 200ms új szirmot hoz létre
   
 // kattintáskor indul minden
 function showSurprise(){
@@ -114,7 +112,10 @@ function showSurprise(){
   music.play().catch(() => {
     alert('Kattints a play gombra a zene elindításához!');
   });
-
+  
+// folyamatos hullás
+setInterval(createFlower, 200); // minden 200ms új szirmot hoz létre
+  
   // virágszirmok folyamatosan
   for(let i=0;i<50;i++){
     setTimeout(createFlower, i*200);
