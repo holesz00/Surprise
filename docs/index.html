@@ -100,9 +100,11 @@ function createFlower(){
   flower.style.backgroundSize = 'contain';
   flower.style.backgroundRepeat = 'no-repeat';
   document.body.appendChild(flower);
-  setTimeout(()=>{flower.remove()}, 6000);
+  setTimeout(()=>{flower.remove()}, 10000);
 }
-
+// folyamatos hullás
+setInterval(createFlower, 200); // minden 200ms új szirmot hoz létre
+  
 // kattintáskor indul minden
 function showSurprise(){
   const secret = document.getElementById('secret');
