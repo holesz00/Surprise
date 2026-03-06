@@ -64,28 +64,23 @@ Szerettem volna valami apró meglepetést küldeni neked,
 még akkor is, ha most messze vagyunk egymástól.
 </div>
 
-<button onclick="showMessage()">Kattints ide ❤️</button>
+<button onclick="playMusic()">Kattints ide ❤️</button>
 
 <div id="secret" class="hidden">
-<p>Te vagy a legfontosabb nekem. 💕</p>
-
+<p>Te vagy az egyik legkülönlegesebb ember az életemben. 💕</p>
 <img src="kep.jpg" alt="Közös képünk">
-
-<audio id="music" controls>
-  <source src="zene.mp3" type="audio/mpeg">
-  A böngésződ nem támogatja az audio lejátszást.
-</audio>
-
 </div>
-</div>
+
+<audio id="music" src="zene.mp3" type="audio/mpeg"></audio>
 
 <script>
-function showMessage(){
-const secret = document.getElementById('secret');
-secret.style.display='block';
-
-const music = document.getElementById('music');
-music.play();
+function playMusic() {
+  const music = document.getElementById('music');
+  const secret = document.getElementById('secret');
+  secret.style.display = 'block';
+  music.play().catch(() => {
+    alert('Kattints a play gombra a zene elindításához!');
+  });
 }
 </script>
 
